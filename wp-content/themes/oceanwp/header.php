@@ -13,6 +13,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	
 </head>
 
 <body <?php body_class(); ?> <?php oceanwp_schema_markup( 'html' ); ?>>
@@ -20,6 +21,7 @@
 	<?php wp_body_open(); ?>
 
 	<?php do_action( 'ocean_before_outer_wrap' ); ?>
+	
 
 	<div id="outer-wrap" class="site clr">
 
