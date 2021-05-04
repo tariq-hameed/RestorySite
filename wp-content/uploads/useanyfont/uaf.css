@@ -1,0 +1,13 @@
+				@font-face {
+					font-family: 'avenir_black';
+					src: url('/wp-content/uploads/useanyfont/7654Avenir_Black.woff2') format('woff2'),
+						url('/wp-content/uploads/useanyfont/7654Avenir_Black.woff') format('woff');
+					font-display: auto;
+				}
+
+				.avenir_black{font-family: 'avenir_black' !important;}
+
+						.site-description, p, blockquote, .menu-header-container li a, .menu-header-container li span, #menu-header li a, #menu-header li span{
+					font-family: 'avenir_black' !important;
+				}
+		
