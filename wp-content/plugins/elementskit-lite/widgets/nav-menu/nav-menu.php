@@ -47,7 +47,7 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
         return $list;
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'elementskit_content_tab',
@@ -539,13 +539,13 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
             'elementskit_style_tab_submenu_item_arrow',
             [
                 'label' => esc_html__( 'Submenu Indicator', 'elementskit-lite' ),
-                'type' => Controls_Manager::SELECT,
+                'type'  => Controls_Manager::SELECT,
                 'default' => 'elementskit_line_arrow',
                 'options' => [
-                    'elementskit_line_arrow'  => esc_html__( 'Line Arrow', 'elementskit-lite' ),
-                    'elementskit_plus_icon' => esc_html__( 'Plus', 'elementskit-lite' ),
-                    'elementskit_fill_arrow' => esc_html__( 'Fill Arrow', 'elementskit-lite' ),
-                    'elementskit_none' => esc_html__( 'None', 'elementskit-lite' ),
+                    'elementskit_line_arrow'    => esc_html__( 'Line Arrow', 'elementskit-lite' ),
+                    'elementskit_plus_icon'     => esc_html__( 'Plus', 'elementskit-lite' ),
+                    'elementskit_fill_arrow'    => esc_html__( 'Fill Arrow', 'elementskit-lite' ),
+                    'elementskit_none'          => esc_html__( 'None', 'elementskit-lite' ),
                 ],
             ]
         );
@@ -554,8 +554,9 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
             'elementskit_style_tab_submenu_indicator_color',
             [
                 'label' => esc_html__( 'Indicator color', 'elementskit-lite' ),
-                'type' => Controls_Manager::COLOR,
-                'default' =>  '#000000',
+                'type'  => Controls_Manager::COLOR,
+                'default'   =>  '#101010',
+                'alpha'     => false,
                 'selectors' => [
                     '{{WRAPPER}} .elementskit-navbar-nav > li > a .elementskit-submenu-indicator' => 'color: {{VALUE}}',
                 ],
@@ -567,9 +568,9 @@ class ElementsKit_Widget_Nav_Menu extends Widget_Base {
         $this->add_responsive_control(
             'ekit_submenu_indicator_spacing',
             [
-                'label' => esc_html__( 'Indicator Margin', 'elementskit-lite' ),
+                'label' => esc_html__( 'Indicator Margin (px)', 'elementskit-lite' ),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em' ],
+                'size_units' => ['px'],
                 'selectors' => [
                     '{{WRAPPER}} .elementskit-navbar-nav-default .elementskit-dropdown-has>a .elementskit-submenu-indicator' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],

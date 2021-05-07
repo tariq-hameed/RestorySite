@@ -37,6 +37,9 @@ class Plugin{
         // Enqueue frontend scripts.
         add_action( 'wp_enqueue_scripts', [$this, 'enqueue_frontend'] );
 
+        // migrate old settings db to new format
+        new Compatibility\Data_Migration\Settings_Db();
+
         // Enqueue admin scripts.
         add_action( 'admin_enqueue_scripts', [$this, 'enqueue_admin'] );
 
@@ -119,7 +122,7 @@ class Plugin{
 		    ->set_parent_menu_slug('elementskit')
 		    ->set_plugin_file('elementskit-lite/elementskit-lite.php')
 		    ->set_pro_link(
-		    	((\ElementsKit_Lite::package_type() != 'free') ? '' : 'http://go.wpmet.com/ekitpro')
+		    	((\ElementsKit_Lite::package_type() != 'free') ? '' : 'https://go.wpmet.com/ekitpro')
 		    )
 		    ->set_default_grid_thumbnail(\ElementsKit_Lite::lib_url() . 'pro-awareness/assets/support.png')
 
@@ -139,7 +142,7 @@ class Plugin{
 			    'thumbnail' => \ElementsKit_Lite::lib_url() . 'pro-awareness/assets/request.png',
 		    ])
 		    ->set_plugin_row_meta('Documentation','https://go.wpmet.com/ekitdoc', ['target'=>'_blank'])
-		    ->set_plugin_row_meta('Facebook Community','http://go.wpmet.com/facebook-group', ['target'=>'_blank'])
+		    ->set_plugin_row_meta('Facebook Community','https://go.wpmet.com/facebook-group', ['target'=>'_blank'])
 		    ->set_plugin_row_meta('Rate the plugin ★★★★★','https://wordpress.org/support/plugin/elementskit-lite/reviews/#new-post', ['target'=>'_blank'])
 		    ->set_plugin_action_link('Settings',admin_url() . 'admin.php?page=elementskit')
 		    ->set_plugin_action_link(($is_pro_active ? '' : 'Go Premium'),'https://wpmet.com/plugin/elementskit', ['target'=>'_blank', 'style' => 'color: #FCB214; font-weight: bold;'])
@@ -197,7 +200,6 @@ class Plugin{
      * @access public
      */
     public function enqueue_frontend(){
-        wp_enqueue_style( 'elementor-icons-ekiticons', \ElementsKit_Lite::module_url() . 'controls/assets/css/ekiticons.css', \ElementsKit_Lite::version() );
         wp_enqueue_script( 'elementskit-framework-js-frontend', \ElementsKit_Lite::lib_url() . 'framework/assets/js/frontend-script.js', ['jquery'], \ElementsKit_Lite::version(), true );
     }
 
@@ -217,7 +219,7 @@ class Plugin{
         }
 
         wp_register_style( 'fontawesome', \ElementsKit_Lite::widget_url() . 'init/assets/css/font-awesome.min.css', \ElementsKit_Lite::version() );
-        wp_register_style( 'elementskit-font-css-admin', \ElementsKit_Lite::module_url() . 'controls/assets/css/ekiticons.css', \ElementsKit_Lite::version() );
+        wp_register_style( 'elementskit-font-css-admin', \ElementsKit_Lite::module_url() . 'elementskit-icon-pack/assets/css/ekiticons.css', \ElementsKit_Lite::version() );
         wp_register_style( 'elementskit-lib-css-admin', \ElementsKit_Lite::lib_url() . 'framework/assets/css/framework.css', \ElementsKit_Lite::version() );
         wp_register_style( 'elementskit-init-css-admin', \ElementsKit_Lite::lib_url() . 'framework/assets/css/admin-style.css', \ElementsKit_Lite::version() );
         wp_register_style( 'elementskit-init-css-admin-ems', \ElementsKit_Lite::lib_url() . 'framework/assets/css/admin-style-ems-dev.css', \ElementsKit_Lite::version() );

@@ -1,10 +1,8 @@
 <?php
 $widgets_all = \ElementsKit_Lite\Config\Widget_List::instance()->get_list();
-$widgets_active = $this->utils->get_option('widget_list', $widgets_all);
-$widgets_active = (!isset($widgets_active[0]) ? array_keys($widgets_active) : $widgets_active);
+$widgets_active = \ElementsKit_Lite\Config\Widget_List::instance()->get_list('active');
 
 ?>
-
 <!-- this blank input is for empty form submission -->
 <input checked="checked" type="checkbox" value="_null" style="display:none" name="widget_list[]" >
 
@@ -24,7 +22,7 @@ $widgets_active = (!isset($widgets_active[0]) ? array_keys($widgets_active) : $w
                         'attr' => ($widget_config['package'] != 'pro-disabled' ? [] : ['disabled' => 'disabled' ]),
                         'class' => 'ekit-content-type-' . esc_attr($widget_config['package']),
                         'options' => [
-                            'checked' => ((in_array($widget, $widgets_active) && $widget_config['package'] != 'pro-disabled') ? true : false),
+                            'checked' => (isset($widgets_active[$widget]) ? true : false),
                         ]
                     ]);
                 ?>

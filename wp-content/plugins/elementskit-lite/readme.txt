@@ -1,9 +1,9 @@
-=== Elementskit Elementor addons (Header & Footer Builder, Mega Menu Builder, Layout Library) ===
+=== Elements kit Elementor addons (Header & Footer Builder, Mega Menu Builder, Layout Library) ===
 Contributors: Ataurr, wpmet, emranio, easin55474, enamulhoquemohon
 Tags: elementor addons, mega menu, header footer builder, elements, elementor extensions, elementor modules, page builder addons, elementor addon, elementor widget, addons
 Requires at least: 5.0
 Tested up to: 5.7
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ ElementsKit is an ultimate All in one addons for Elementor Page Builder. It incl
 
 
 
-**Elementskit** Elementor Addon has Exclusive features that blow your mind. Like our Mega Menu Builder, Header and Footer Builder layout library, One Page Scroll, Sticky Content, Parallax Effects, you will get tons of Premium features that you have never imagined.
+**Elements kit** Elementor Addon has Exclusive features that blow your mind. Like our Mega Menu Builder, Header and Footer Builder layout library, One Page Scroll, Sticky Content, Parallax Effects, you will get tons of Premium features that you have never imagined.
 
 
 ###USEFUL LINKS###
@@ -58,10 +58,10 @@ ElementsKit is an ultimate All in one addons for Elementor Page Builder. It incl
 With ElementsKit we have Layout library features where over 7+ ready-made homepage available and 300+ ready-made sections available. Just click the layout icon and insert it into your site, it's so easy to use without any hassle like importing JSON.  You will get a complete native feel when you use this.
 
 == 250+ Ready blocks ==
-ElementsKit All in one elementor addon comes with 250+ readymade blocks.  Make any website on the fly with readymade blocks from the Exclusive layout kit library. You don't need to create from scratch just input the design from the layout kit library and modify according to your need that’s it. Your site is now ready to launch.
+Elements Kit All in one elementor addon comes with 250+ readymade blocks.  Make any website on the fly with readymade blocks from the Exclusive layout kit library. You don't need to create from scratch just input the design from the layout kit library and modify according to your need that’s it. Your site is now ready to launch.
 
 == Modular based and Lightweight  ==
-ElementsKit build optimization in mind. We develop our plugin Modular based so if you don't need any addons. You can enable/disable specific elements from the ElementsKit option panel to prevent overloading your website with Extra  CSS or JS code you will not use which helps your website have a blazing fast performance.
+Elements Kit build optimization in mind. We develop our plugin Modular based so if you don't need any addons. You can enable/disable specific elements from the Elements Kit option panel to prevent overloading your website with Extra  CSS or JS code you will not use which helps your website have a blazing fast performance.
 
 == Completely Customizable  ==
 Every elementor widgets have Huge customizable options to control any widgets according to your needs.  You can build any style you want with our plugin.
@@ -348,6 +348,21 @@ Our Hotspot Widget for Elementor page builder offers lots of styles including: H
 
 == Changelog ==
 
+Version: 2.2.3 (05-05-2021)
+New: Blog Posts Widget Floating Category.
+New: Blog Posts Widget Various Missing Controls.
+New: Client Image Position control for Testimonial Widget.
+New: Background Hover Effect control for Testimonial Widget.
+New: Rating Hover Color control for Testimonial Widget.
+Tweak: Replaced deprecated Elementor PHP Methods for Widgets.
+Tweak: Animating Pie Chart when in view.
+Tweak: Improvements to the Testimonial Widget.
+Fix: Border and Padding issues fixed on 'Video' Widget.
+Fix: TablePress fatal error after deactivation.
+Fix: Submenu icon render issue.
+Fix: Minor css fix for Sticky On Scroll Up.
+Fix: Minor js error with OnePageScroll Module.
+
 Version: 2.2.2 (14-04-2021)
 New: 'Text' option for 'Header Offcanvas' widget menu.
 New: 'Info Text' tooltip option to 'Pricing Table' Widget.
@@ -576,7 +591,7 @@ version: 1.5.8
 - added width control on megamenu settings
 
 version: 1.5.7
-- ElementsKit widget builder Beta released. https://youtu.be/zE6TMrkZeOI
+- Elements Kit widget builder Beta released. https://youtu.be/zE6TMrkZeOI
 - Fixed few css bugs
 
 version: 1.5.6

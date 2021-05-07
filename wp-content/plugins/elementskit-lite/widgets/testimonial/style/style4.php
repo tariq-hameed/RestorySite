@@ -6,7 +6,7 @@
 					$clientLogo = isset($testimonial['client_photo']['url']) ? $testimonial['client_photo']['url'] : ''; ?>
 					
 					<?php if ( !empty( $testimonial['client_photo']['url'] ) ): ?>
-					<div class="elementskit-commentor-image">
+					<div class="elementskit-commentor-image ekit-testimonial--avatar">
 						<img src="<?php echo esc_url($clientLogo); ?>" height="<?php echo esc_attr($ekit_testimonial_client_image_size['size']); ?>" width="<?php echo esc_attr($ekit_testimonial_client_image_size['size']); ?>" alt="<?php esc_attr_e("Client Photo", "elementskit-lite");?>">
 					</div>
 					<?php endif; ?>
@@ -47,9 +47,9 @@
 					<?php
 						$reviewData = isset($testimonial['rating']) ? $testimonial['rating'] : 0;
 						for($m = 1; $m <= 5; $m++){
-							$iconStart = 'far fa-star';
+							$iconStart = 'eicon-star-o';
 							if($reviewData >= $m){
-								$iconStart = 'fas fa-star active';
+								$iconStart = 'eicon-star active';
 							}
 						?>
 						<li><a href="#"><i class="<?php esc_attr_e( $iconStart, 'elementskit-lite' );?>"></i></a></li>

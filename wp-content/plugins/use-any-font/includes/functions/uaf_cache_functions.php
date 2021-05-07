@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 function uaf_clear_plugins_cache(){
-	if (function_exists('sg_cachepress_purge_cache')) {sg_cachepress_purge_cache();} // FOR SG OPTIMIZER
+  if (function_exists('sg_cachepress_purge_cache')) {sg_cachepress_purge_cache();} // FOR SG OPTIMIZER
 	if (function_exists('w3tc_flush_all')){w3tc_flush_all();} // FOR W3 TOTAL CACHE
 	if (function_exists('wpfc_clear_all_cache')){wpfc_clear_all_cache(true);} // FOR WP Fastest Cache
 	if (function_exists('wp_cache_clear_cache')){wp_cache_clear_cache();} // FOR WP Super Cache
@@ -33,7 +33,7 @@ function uaf_clear_plugins_cache(){
         $kinsta_cache->kinsta_cache_purge->purge_complete_caches();
     }
     if (class_exists( '\WPaaS\Cache' ) ) { // FOR GODADDY Cache
-        ccfm_godaddy_purge();
+        if (function_exists('ccfm_godaddy_purge')){ccfm_godaddy_purge();}
     }
     if ( class_exists( 'Breeze_Admin' ) ) { // FOR BREEZE (Cloudways)
         do_action('breeze_clear_all_cache');

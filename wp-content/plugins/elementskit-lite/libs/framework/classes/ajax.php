@@ -23,11 +23,39 @@ class Ajax{
 
 
         if(isset($_POST['widget_list'])){
-            $this->utils->save_option('widget_list', empty($_POST['widget_list']) ? [] : $_POST['widget_list']);
+            $widget_list = \ElementsKit_Lite\Config\Widget_List::instance()->get_list();
+            $widget_list_input = (!is_array($_POST['widget_list']) ? [] : $_POST['widget_list']);
+            $widget_prepared_list = [];
+
+			foreach($widget_list as $widget_slug => $widget) {
+                if(isset($widget['package']) && $widget['package'] == 'pro-disabled'){
+                    continue;
+                }
+
+                $widget['status'] = (in_array($widget_slug, $widget_list_input) ? 'active' : 'inactive');
+
+                $widget_prepared_list[$widget_slug] = $widget;
+			}
+
+            $this->utils->save_option('widget_list', $widget_prepared_list);
         }
 
         if(isset($_POST['module_list'])){
-            $this->utils->save_option('module_list', empty($_POST['module_list']) ? [] : $_POST['module_list']);
+            $module_list = \ElementsKit_Lite\Config\Module_List::instance()->get_list('optional');
+            $module_list_input = (!is_array($_POST['module_list']) ? [] : $_POST['module_list']);
+            $module_prepared_list = [];
+
+            foreach($module_list as $module_slug => $module) {
+                if(isset($module['package']) && $module['package'] == 'pro-disabled'){
+                    continue;
+                }
+
+                $module['status'] = (in_array($module_slug, $module_list_input) ? 'active' : 'inactive');
+
+                $module_prepared_list[$module_slug] = $module;
+			}
+
+            $this->utils->save_option('module_list', $module_prepared_list);
         }
 
         if(isset($_POST['user_data'])){

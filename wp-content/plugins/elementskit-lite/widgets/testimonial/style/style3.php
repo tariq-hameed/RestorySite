@@ -11,9 +11,9 @@
 					<?php
 					$reviewData = isset($testimonial['rating']) ? $testimonial['rating'] : 0;
 					for($m = 1; $m <= 5; $m++){
-						$iconStart = 'far fa-star';
+						$iconStart = 'eicon-star-o';
 						if($reviewData >= $m){
-							$iconStart = 'fas fa-star active';
+							$iconStart = 'eicon-star active';
 						}
 					?>
 					<li><a href="#"><i class="<?php esc_attr_e( $iconStart, 'elementskit-lite' );?>"></i></a></li>

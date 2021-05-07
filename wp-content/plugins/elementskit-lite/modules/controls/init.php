@@ -17,11 +17,8 @@ class Init{
 
         // Includes necessary files
         $this->include_files();
-        // load icons
-        Icons::_get_instance()->ekit_icons_pack();
         
         // Initilizating control hooks
-        add_action('elementor/controls/controls_registered', array( $this, 'icon' ), 11 );
         add_action('elementor/controls/controls_registered', array( $this, 'image_choose' ), 11 );
         add_action('elementor/controls/controls_registered', array( $this, 'ajax_select2' ), 11 );
         add_action('elementor/controls/controls_registered', array( $this, 'widgetarea' ), 11 );
@@ -42,9 +39,6 @@ class Init{
         // image choose
         include_once self::get_dir() . 'image-choose.php';
 
-        // icons
-        include_once self::get_dir() . 'icons.php';
-
         // ajax select2
         include_once self::get_dir() . 'ajax-select2.php';
         include_once self::get_dir() . 'ajax-select2-api.php';
@@ -52,11 +46,6 @@ class Init{
         // widgetarea
         include_once self::get_dir() . 'widget-area-utils.php';
         include_once self::get_dir() . 'widget-area.php';
-    }
-
-    public function icon( $controls_manager ) {
-        $controls_manager->unregister_control( $controls_manager::ICON );
-        $controls_manager->register_control( $controls_manager::ICON, new \ElementsKit_Lite\Modules\Controls\Icon());
     }
 
     public function image_choose( $controls_manager ) {

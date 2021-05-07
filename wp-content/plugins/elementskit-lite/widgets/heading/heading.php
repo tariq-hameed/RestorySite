@@ -32,7 +32,7 @@ class ElementsKit_Widget_Heading extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
 
 		$this->start_controls_section(
@@ -684,7 +684,7 @@ class ElementsKit_Widget_Heading extends Widget_Base {
 				'default' => 'no',
 				'label_on' =>esc_html__( 'Yes', 'elementskit-lite' ),
 				'label_off' =>esc_html__( 'No', 'elementskit-lite' ),
-				'separetor' => 'before',
+				'separator' => 'before',
 				'condition' => [
 					'ekit_heading_use_focused_title_bg!' => 'yes'
 				]

@@ -25,7 +25,7 @@
 		?>
         <div class="elementskit-commentor-bio <?php echo esc_attr($ekit_testimonial_client_area_alignment); ?>">
 			<div class="elementkit-commentor-details">
-					<div class="elementskit-commentor-image">
+					<div class="elementskit-commentor-image ekit-testimonial--avatar">
 						<img src="<?php echo esc_url($clientLogo); ?>"  height="<?php echo esc_attr($ekit_testimonial_client_image_size['size']); ?>" width="<?php echo esc_attr($ekit_testimonial_client_image_size['size']); ?>" alt="<?php esc_attr_e("Client Logo", "elementskit-lite");?>">
 					</div>
 			</div>
@@ -52,9 +52,9 @@
                     <?php
 					$reviewData = isset($testimonial['rating']) ? $testimonial['rating'] : 0;
                     for($m = 1; $m <= 5; $m++){
-                        $iconStart = 'far fa-star';
+                        $iconStart = 'eicon-star-o';
                         if($reviewData >= $m){
-                            $iconStart = 'fas fa-star active';
+                            $iconStart = 'eicon-star active';
                         }
                     ?>
                     <li><a href="#"><i class="<?php esc_attr_e( $iconStart, 'elementskit-lite' );?>"></i></a></li>

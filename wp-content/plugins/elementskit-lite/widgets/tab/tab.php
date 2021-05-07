@@ -31,7 +31,7 @@ class ElementsKit_Widget_Tab extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'section_tab', [
                 'label' =>esc_html__( 'Tab', 'elementskit-lite' ),
@@ -325,6 +325,20 @@ class ElementsKit_Widget_Tab extends Widget_Base {
                 'type'                  => Controls_Manager::SWITCHER,
                 'return_value'          => '1',
                 'frontend_available'    => true,
+            ]
+        );
+
+        $this->add_control(
+            'ekit_tab_trigger_type',
+            [
+                'label' => esc_html__( 'Toggle Type', 'elementskit-lite' ),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'click',
+                'options' => [
+                    'click' => esc_html__( 'Click', 'elementskit-lite' ),
+                    'mouseenter' => esc_html__( 'Hover', 'elementskit-lite' ),
+                ],
+
             ]
         );
 
@@ -2097,7 +2111,8 @@ class ElementsKit_Widget_Tab extends Widget_Base {
                     ?>
                     <li class="elementkit-nav-item elementor-repeater-item-<?php echo esc_attr( $tab[ '_id' ] ); ?>">
                         <a class="elementkit-nav-link <?php echo esc_attr($is_active);?> <?php echo esc_attr($ekit_tab_header_icon_pos_style); ?>" id="content-<?php echo esc_attr($tab['_id'].$tab_id); ?>-tab" data-ekit-handler-id="<?php echo esc_html( $handler_id ); ?>" data-ekit-toggle="tab" href="#content-<?php echo esc_attr($tab['_id'].$tab_id); ?>"
-                           role="tab" aria-controls="content-<?php echo esc_attr($tab['_id'].$tab_id); ?>" aria-selected="true">
+                            data-ekit-toggle-trigger="<?php echo esc_attr( $ekit_tab_trigger_type ); ?>"
+                            role="tab" aria-controls="content-<?php echo esc_attr($tab['_id'].$tab_id); ?>" aria-selected="true">
                             <?php echo \ElementsKit_Lite\Utils::kses($icon_html.$img_html); ?>
                             <span class="elementskit-tab-title"><?php echo esc_html($tab['ekit_tab_title']); ?></span>
                         </a>

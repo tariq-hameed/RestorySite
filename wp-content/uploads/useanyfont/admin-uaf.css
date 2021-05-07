@@ -1,11 +1,11 @@
 				@font-face {
-					font-family: 'avenir_black';
-					src: url('/wp-content/uploads/useanyfont/7654Avenir_Black.woff2') format('woff2'),
-						url('/wp-content/uploads/useanyfont/7654Avenir_Black.woff') format('woff');
+					font-family: 'avenir_book';
+					src: url('/wp-content/uploads/useanyfont/3912Avenir_book.woff2') format('woff2'),
+						url('/wp-content/uploads/useanyfont/3912Avenir_book.woff') format('woff');
 				}
 
-				.avenir_black{font-family: 'avenir_black' !important;}
+				.avenir_book{font-family: 'avenir_book' !important;}
 
-				.et_gf_avenir_black{background:none !important;font-family:avenir_black;text-indent:0 !important;font-size:25px;}
+				.et_gf_avenir_book{background:none !important;font-family:avenir_book;text-indent:0 !important;font-size:25px;}
 
 		
